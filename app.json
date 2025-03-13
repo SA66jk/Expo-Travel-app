@@ -1,0 +1,87 @@
+{
+  "expo": {
+    "name": "expo-app-template-js",
+    "slug": "expo-app-template-js",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "newArchEnabled": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs camera access to take photos.",
+        "NSLocationWhenInUseUsageDescription": "This app needs location access to record your current location.",
+        "NSLocationAlwaysUsageDescription": "This app needs location access to record your current location.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyDgb6j5U5OXgola3grhnWK9am5pawjtask"
+      },
+      "bundleIdentifier": "com.zixingyx.expoapptemplatejs"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "newArchEnabled": true,
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-build-properties",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow this app to access your camera to take photos."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow this app to access your location.",
+          "locationAlwaysPermission": "Allow this app to access your location in the background.",
+          "locationWhenInUsePermission": "Allow this app to access your location while using the app."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b358b268-a60a-4249-ae52-03c5b44328b0"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b358b268-a60a-4249-ae52-03c5b44328b0"
+    }
+  }
+}
