@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  View,
+  View, 
   Text,
   Modal,
   Image,
@@ -27,18 +27,18 @@ const windowWidth = Dimensions.get('window').width;
  * @param {function} onUpdateTheme - 更新主题的回调
  */
 export const LocationDetailModal = ({
-  isVisible,
-  location,
-  showMap,
-  onToggleMap,
-  onDelete,
-  onClose,
-  onUpdatePhoto,
-  onUpdateTheme
+  isVisible, //弹窗是否可见
+  location, //传入地点数据
+  showMap, //控制地图显示和隐藏
+  onToggleMap, //切换地图显示状态的回调函数
+  onDelete, //删除地点的回调函数
+  onClose, //关闭弹窗的回调函数
+  onUpdatePhoto, //更新照片的回调函数
+  onUpdateTheme //更新主题的回调函数
 }) => {
   // 编辑主题模态框的状态管理
-  const [isEditThemeModalVisible, setIsEditThemeModalVisible] = useState(false);
-  const [editingTheme, setEditingTheme] = useState('');
+  const [isEditThemeModalVisible, setIsEditThemeModalVisible] = useState(false); //编辑主题弹窗是否显示
+  const [editingTheme, setEditingTheme] = useState(''); //编辑的主题
 
   // 如果没有位置信息，不渲染任何内容
   if (!location) return null;
@@ -46,15 +46,15 @@ export const LocationDetailModal = ({
   // 处理编辑主题按钮点击
   const handleEditTheme = () => {
     setEditingTheme(location.name);
-    setIsEditThemeModalVisible(true);
+    setIsEditThemeModalVisible(true); //显示编辑弹窗
   };
 
   // 处理保存主题
   const handleSaveTheme = () => {
-    if (editingTheme.trim() && onUpdateTheme) {
-      onUpdateTheme(editingTheme);
-      setIsEditThemeModalVisible(false);
-      setEditingTheme('');
+    if (editingTheme.trim() && onUpdateTheme) { //确保输入框有内容
+      onUpdateTheme(editingTheme); //调用onUpdateTheme进行主题更新
+      setIsEditThemeModalVisible(false); //关闭弹窗
+      setEditingTheme(''); //清空输入框
     }
   };
 
@@ -68,7 +68,7 @@ export const LocationDetailModal = ({
         <View style={styles.modalContent}>
           {/* 照片区域 */}
           <TouchableOpacity
-            onPress={onUpdatePhoto}
+            onPress={() => onUpdatePhoto(location.id)}
             style={styles.modalImageContainer}
           >
             <Image 

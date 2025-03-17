@@ -30,23 +30,3 @@ export const takePhoto = async () => {
   }
 };
 
-// 选择图片
-export const pickImage = async () => {
-  try {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    });
-
-    if (result.canceled) {
-      return null;
-    }
-
-    return result.assets[0].uri;
-  } catch (error) {
-    console.error('Failed to pick image:', error);
-    throw error;
-  }
-}; 

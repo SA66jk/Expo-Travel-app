@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-export const LocationItem = ({ location, onPress }) => {
+export const LocationItem = ({ location, onPress }) => { //从 LocationList.js 里接收 单个 location 和 onPress
   return (
     <TouchableOpacity 
       style={styles.locationItem}

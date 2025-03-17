@@ -13,17 +13,17 @@ import {
 const windowWidth = Dimensions.get('window').width;
 
 export const LocationPreviewModal = ({
-  isVisible,
-  isLoadingLocation,
-  previewLocation,
-  previewPhoto,
-  onLoadLocation,
-  onTakePhoto,
-  onCancel,
-  onConfirm,
-  isLoading
+  isVisible, //控制模态框是否显示
+  isLoadingLocation, //是否正在获取位置
+  previewLocation, //预览位置信息
+  previewPhoto, //预览照片
+  onLoadLocation, //获取当前位置的回调函数
+  onTakePhoto, //拍照的回调函数
+  onCancel, //取消上传的回调函数
+  onConfirm, //确认上传的回调函数
+  isLoading //是否正在提交数据
 }) => {
-  const [theme, setTheme] = useState('');
+  const [theme, setTheme] = useState(''); 
 
   return (
     <Modal

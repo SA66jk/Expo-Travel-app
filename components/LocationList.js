@@ -2,11 +2,11 @@ import React from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import { LocationItem } from './LocationItem';
 
-export const LocationList = ({ locations, onLocationPress }) => {
+export const LocationList = ({ locations, onLocationPress }) => { //接受locations和onLocationPress函数作为props
   return (
     <ScrollView style={styles.locationsList}>
       {locations.length === 0 ? (
-        <View style={styles.emptyContainer}>
+        <View style={styles.emptyContainer}> 
         </View>
       ) : (
         locations.map(location => (
@@ -20,6 +20,11 @@ export const LocationList = ({ locations, onLocationPress }) => {
     </ScrollView>
   );
 };
+
+//列表为空显示列表为空样式
+//列表不为空遍历 locations，为 每个地点创建一个 LocationItem 组件
+//onPress={() => onLocationPress(location)} 绑定点击事件
+//onLocationPress 函数会在点击时调用，传入当前地点作为参数
 
 const styles = StyleSheet.create({
   locationsList: {
